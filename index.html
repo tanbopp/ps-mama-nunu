@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Mama Nunu | Rental PlayStation Premium</title>
+    
+    <!-- Google Fonts: Inter untuk tampilan clean mirip Sony -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons (Minimalist Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#128aeb',
+                            dark: '#000000',
+                            light: '#ffffff',
+                            gray: '#1f1f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+<body class="font-sans text-brand-dark bg-white antialiased overflow-x-hidden">
+
+    <!-- Top "Sony" Style Bar -->
+    <div class="sony-bar text-white text-xs font-bold tracking-widest">
+        <span class="mr-4">PS MAMA NUNU</span>
+    </div>
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            
+            <a href="index.html" class="flex items-center space-x-2 cursor-pointer flex-shrink-0">
+                <i class="ph-fill ph-game-controller text-3xl md:text-4xl text-brand-blue"></i>
+                <div class="flex flex-col whitespace-nowrap">
+                    <span class="text-lg md:text-xl font-black tracking-tighter leading-none">PS MAMA</span>
+                    <span class="text-lg md:text-xl font-light tracking-widest leading-none">NUNU</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 font-bold text-sm tracking-wide">
+                <a href="index.html" class="nav-link hover:text-brand-blue transition-colors py-2 active">BERANDA</a>
+                <a href="consoles.html" class="nav-link hover:text-brand-blue transition-colors py-2">KONSOL & HARGA</a>
+                <a href="games.html" class="nav-link hover:text-brand-blue transition-colors py-2">LIBRARY GAME</a>
+                <a href="contact.html" class="nav-link hover:text-brand-blue transition-colors py-2">LOKASI & BOOKING</a>
+            </nav>
+
+            <div class="hidden lg:block flex-shrink-0">
+                <a href="contact.html" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 transition transform hover:scale-105 shadow whitespace-nowrap text-sm">
+                    Sewa Sekarang
+                </a>
+            </div>
+
+            <button class="lg:hidden text-3xl p-2" onclick="toggleMobileMenu()" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl">
+            <div class="flex flex-col p-6 space-y-4 font-bold text-gray-700">
+                <a href="index.html" class="text-left py-2 text-brand-blue border-b border-gray-50">BERANDA</a>
+                <a href="consoles.html" class="text-left py-2 hover:text-brand-blue border-b border-gray-50">KONSOL & HARGA</a>
+                <a href="games.html" class="text-left py-2 hover:text-brand-blue border-b border-gray-50">LIBRARY GAME</a>
+                <a href="contact.html" class="text-left py-2 hover:text-brand-blue">BOOKING SEKARANG</a>
+                
+                <a href="contact.html" class="bg-brand-blue text-white text-center py-3 rounded-xl shadow-md">
+                    Sewa Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative w-full max-md:h-[540px] aspect-[5/2] overflow-hidden bg-black text-white flex items-center">
+            
+            <img src="assets/img/banner-hero.webp" 
+                 alt="PS5 Background Desktop" 
+                 class="absolute inset-0 w-full h-full object-cover hidden md:block">
+            
+            <img src="assets/img/banner-hero-mobile.webp" 
+                 alt="PS5 Background Mobile" 
+                 class="absolute inset-0 w-full h-full object-cover block md:hidden">
+
+            <div class="container mx-auto px-4 relative z-10 fade-in max-w-5xl">
+                <div class="max-w-md max-md:mx-auto max-md:text-center">
+                    
+                    <h1 class="text-4xl font-thin mb-3 leading-snug">
+                        Rental PlayStation Termurah dan Terbaik
+                    </h1>
+                    
+                    <p class="text-sm font-normal mb-8 max-w-2xl text-white/80">
+                        Nikmati pengalaman gaming resolusi 4K dengan DualSense controller di PS Mama Nunu. Tempat rental paling asik, dingin, dan lengkap.
+                    </p>
+                    
+                    <div class="flex max-md:flex-col items-start max-md:items-center gap-4">
+                        <a href="consoles.html" class="bg-white text-black px-5 py-2.5 font-bold rounded-full w-fit">
+                            Lihat Harga Rental
+                        </a>
+                        <a href="games.html" class="bg-transparent text-white px-5 py-2.5 border border-white font-bold rounded-full hover:bg-white hover:text-black w-fit">
+                            Cek List Game
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ketersediaan Unit -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-normal text-center mb-16 text-gray-800">Ketersediaan PlayStation</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    <!-- PS4 -->
+                    <div class="w-auto flex flex-col items-center">
+                        <div class="h-[267px]">
+                            <img src="assets/img/ps4.webp" alt="PlayStation 4" class="h-full">
+                        </div>
+                        <h3 class="text-[#128aeb] font-light text-2xl mt-3">PlayStation®4 Pro</h3>
+                    </div>
+
+                    <!-- PS5 -->
+                    <div class="w-auto flex flex-col items-center">
+                        <div class="h-[267px]">
+                            <img src="assets/img/ps5.png" alt="PlayStation 5" class="h-full">
+                        </div>
+                        <h3 class="text-[#128aeb] font-light text-2xl mt-3">PlayStation®5</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fasilitas -->
+        <section class="py-20 bg-slate-100 overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-normal text-center mb-16 text-gray-800">Kenyamanan main kamu adalah prioritas kami</h2>
+                </div>
+                
+                <div class="flex overflow-x-auto pb-10 gap-6 snap-x snap-mandatory px-4 -mx-4 scrollbar-hide">
+                    
+                    <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-3xl p-8 snap-center border border-gray-100 flex flex-col items-start">
+                        <div class="mb-6 rounded-2xl text-brand-blue">
+                            <i class="ph-fill ph-tag text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-normal mb-3 text-gray-900">Mulai Rp 8.000/Jam</h3>
+                        <p class="text-base text-gray-700 leading-snug">
+                            Harga pelajar kualitas sultan. Main sepuasnya tanpa bikin kantong bolong.
+                        </p>
+                    </div>
+
+                    <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-3xl p-8 snap-center border border-gray-100 flex flex-col items-start">
+                        <div class="mb-6 rounded-2xl text-brand-blue">
+                            <i class="ph-fill ph-disc text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-normal mb-3 text-gray-900">Game PS4 Terbaru</h3>
+                        <p class="text-base text-gray-700 leading-snug">
+                            Library game selalu diupdate. FC 24, eFootball, hingga God of War tersedia.
+                        </p>
+                    </div>
+
+                    <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-3xl p-8 snap-center border border-gray-100 flex flex-col items-start">
+                        <div class="mb-6 rounded-2xl text-brand-blue">
+                            <i class="ph-fill ph-game-controller text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-normal mb-3 text-gray-900">Tersedia 9 Controller</h3>
+                        <p class="text-base text-gray-700 leading-snug">
+                            Stik original mesin, analog aman (no drift), baterai selalu penuh.
+                        </p>
+                    </div>
+
+                    <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-3xl p-8 snap-center border border-gray-100 flex flex-col items-start">
+                        <div class="mb-6 rounded-2xl text-brand-blue">
+                            <i class="ph-fill ph-television text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-normal mb-3 text-gray-900">TV 32 ~ 50 Inch</h3>
+                        <p class="text-base text-gray-700 leading-snug">
+                            Layar jernih resolusi HD & 4K. Visual tajam memanjakan mata.
+                        </p>
+                    </div>
+
+                    <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-3xl p-8 snap-center border border-gray-100 flex flex-col items-start">
+                        <div class="mb-6 rounded-2xl text-brand-blue">
+                            <i class="ph-fill ph-wifi-high text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-normal mb-3 text-gray-900">Free Hotspot Wi-Fi</h3>
+                        <p class="text-base text-gray-700 leading-snug">
+                            Koneksi internet kencang gratis untuk pengunjung. Bisa sambil mabar mobile.
+                        </p>
+                    </div>
+
+                    <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-3xl p-8 snap-center border border-gray-100 flex flex-col items-start">
+                        <div class="mb-6 rounded-2xl text-brand-blue">
+                            <i class="ph-fill ph-snowflake text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-normal mb-3 text-gray-900">Full AC</h3>
+                        <p class="text-base text-gray-700 leading-snug">
+                            Ruangan dingin dan wangi. Bebas asap rokok di area utama. Main jadi nyaman.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Games -->
+        <section class="py-20 bg-neutral-900 overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-normal text-center mb-16 text-white">Game yang sudah tersedia atau akan segera hadir</h2>
+                </div>
+                
+                <div class="grid grid-cols-3 md:grid-cols-6 pb-10 gap-4 snap-x snap-mandatory px-4 -mx-4 scrollbar-hide text-white text-left">
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/1.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/2.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/3.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/4.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/5.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/6.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/7.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/8.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/9.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/10.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/11.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full aspect-square rounded-md mb-1.5 shadow-md shadow-black/60 overflow-hidden hover:scale-105 transition duration-200">
+                            <img src="assets/img/game/12.webp" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-b from-sky-700 to-[#128aeb] text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="ph-fill ph-game-controller text-4xl text-white"></i>
+                        <span class="text-2xl font-black tracking-tighter">PS MAMA NUNU</span>
+                    </div>
+                    <p class="max-w-md text-sm leading-relaxed font-medium opacity-90">
+                        Rental PlayStation terlengkap dan ternyaman. Rasakan pengalaman gaming next-gen tanpa harus membeli konsol mahal. Bersih, Dingin, dan Update.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Layanan</h3>
+                    <ul class="space-y-2 text-sm font-medium opacity-90">
+                        <li><a href="consoles.html" class="hover:underline">Rental PS5</a></li>
+                        <li><a href="consoles.html" class="hover:underline">Rental PS4 Pro</a></li>
+                        <li><a href="contact.html" class="hover:underline">Sewa Harian (Bawa Pulang)</a></li>
+                        <li><a href="contact.html" class="hover:underline">Paket Begadang</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-2 text-sm font-medium opacity-90">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-whatsapp-logo"></i> 0812-3456-7890</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-instagram-logo"></i> @psmamanunu</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-map-pin"></i> Jl. Gamer Sejati No. 1</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold">
+                <p>&copy; 2024 PS Mama Nunu. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:underline">Kebijakan Privasi</a>
+                    <a href="#" class="hover:underline">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Single Page Application (SPA) Router logic
+        const appContent = document.getElementById('app-content');
+        
+        function router(viewName) {
+            // Get template
+            const template = document.getElementById(`view-${viewName}`);
+            
+            if (template) {
+                // Clear content
+                appContent.innerHTML = '';
+                // Clone and append content
+                const clone = template.content.cloneNode(true);
+                appContent.appendChild(clone);
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+
+                // Update active navigation state
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('text-brand-blue', 'active'); // Remove active color/state
+                    link.classList.add('text-black');
+                });
+                
+                // Add active class to current nav button
+                const activeBtn = document.getElementById(`nav-${viewName}`);
+                if(activeBtn) {
+                    activeBtn.classList.add('text-brand-blue', 'active');
+                    activeBtn.classList.remove('text-black');
+                }
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if(!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Initialize Home View
+        document.addEventListener('DOMContentLoaded', () => {
+            router('home');
+        });
+    </script>
+</body>
+</html>

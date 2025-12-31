@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental PS Mama Nunu - Contact</title>
+    
+    <!-- Google Fonts: Inter untuk tampilan clean mirip Sony -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons (Minimalist Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#128aeb',
+                            dark: '#000000',
+                            light: '#ffffff',
+                            gray: '#1f1f1f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-brand-dark bg-white antialiased overflow-x-hidden">
+
+    <!-- Top "Sony" Style Bar -->
+    <div class="sony-bar text-white text-xs font-bold tracking-widest">
+        <span class="mr-4">PS MAMA NUNU</span>
+    </div>
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Logo area -->
+            <a href="index.html" class="flex items-center space-x-2 cursor-pointer">
+                <i class="ph-fill ph-game-controller text-4xl text-brand-blue"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none">PS MAMA</span>
+                    <span class="text-xl font-light tracking-widest leading-none">NUNU</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 font-bold text-sm tracking-wide">
+                <a href="index.html" class="nav-link hover:text-brand-blue transition-colors py-2">BERANDA</a>
+                <a href="consoles.html" class="nav-link hover:text-brand-blue transition-colors py-2">KONSOL & HARGA</a>
+                <a href="games.html" class="nav-link hover:text-brand-blue transition-colors py-2">LIBRARY GAME</a>
+                <a href="contact.html" class="nav-link hover:text-brand-blue transition-colors py-2 active">LOKASI & BOOKING</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="contact.html" class="bg-brand-blue text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition transform hover:scale-105 shadow">
+                    Sewa Sekarang
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-3xl" onclick="toggleMobileMenu()">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full border-t border-gray-200 shadow-lg">
+            <div class="flex flex-col p-4 space-y-4 font-bold">
+                <a href="index.html" class="text-left py-2 hover:text-brand-blue">BERANDA</a>
+                <a href="consoles.html" class="text-left py-2 hover:text-brand-blue">KONSOL & HARGA</a>
+                <a href="games.html" class="text-left py-2 hover:text-brand-blue">LIBRARY GAME</a>
+                <a href="contact.html" class="text-left py-2 text-brand-blue">BOOKING SEKARANG</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="py-12 bg-gray-100 min-h-screen fade-in">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                    
+                    <!-- Left Side: Info -->
+                    <div class="bg-black text-white p-10 md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+                        <!-- Decorative circle -->
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-blue rounded-full opacity-20 blur-2xl"></div>
+                        
+                        <div>
+                            <h2 class="text-3xl font-black mb-6">HUBUNGI KAMI</h2>
+                            <p class="mb-8 font-medium text-gray-300">Mau booking biar nggak kehabisan tempat? Isi form atau langsung WhatsApp aja!</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <i class="ph-fill ph-map-pin text-2xl text-brand-blue"></i>
+                                    <div>
+                                        <h4 class="font-bold">Lokasi</h4>
+                                        <p class="text-sm text-gray-400">Jl. Gamer Sejati No. 1<br>Jakarta Selatan</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i class="ph-fill ph-clock text-2xl text-brand-blue"></i>
+                                    <div>
+                                        <h4 class="font-bold">Jam Buka</h4>
+                                        <p class="text-sm text-gray-400">Senin - Minggu<br>09:00 - 02:00 WIB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i class="ph-fill ph-whatsapp-logo text-2xl text-brand-blue"></i>
+                                    <div>
+                                        <h4 class="font-bold">WhatsApp</h4>
+                                        <p class="text-sm text-gray-400">0812-3456-7890</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <p class="text-xs text-gray-500">PS Mama Nunu &copy; 2024</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Form -->
+                    <div class="p-10 md:w-3/5">
+                        <h2 class="text-2xl font-bold text-brand-blue mb-6">Booking Jadwal</h2>
+                        <form onsubmit="alert('Booking terkirim! Admin Mama Nunu akan menghubungi Anda via WhatsApp.'); return false;" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue font-medium" placeholder="Nama Player" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Nomor WhatsApp</label>
+                                <input type="tel" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue font-medium" placeholder="08xx-xxxx-xxxx" required>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Jenis Konsol</label>
+                                    <select class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue font-medium">
+                                        <option>PS5</option>
+                                        <option>PS4 Pro</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Durasi</label>
+                                    <select class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue font-medium">
+                                        <option>1 Jam</option>
+                                        <option>2 Jam</option>
+                                        <option>3 Jam (Paket)</option>
+                                        <option>Paket Begadang</option>
+                                        <option>Sewa Harian (Takeaway)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Jam Kedatangan</label>
+                                <input type="time" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-blue font-medium" required>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-brand-blue text-white font-bold py-4 rounded-full hover:bg-blue-600 transition shadow-lg mt-4">
+                                KIRIM BOOKING
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-b from-sky-700 to-[#128aeb] text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="ph-fill ph-game-controller text-4xl text-white"></i>
+                        <span class="text-2xl font-black tracking-tighter">PS MAMA NUNU</span>
+                    </div>
+                    <p class="max-w-md text-sm leading-relaxed font-medium opacity-90">
+                        Rental PlayStation terlengkap dan ternyaman. Rasakan pengalaman gaming next-gen tanpa harus membeli konsol mahal. Bersih, Dingin, dan Update.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Layanan</h3>
+                    <ul class="space-y-2 text-sm font-medium opacity-90">
+                        <li><a href="consoles.html" class="hover:underline">Rental PS5</a></li>
+                        <li><a href="consoles.html" class="hover:underline">Rental PS4 Pro</a></li>
+                        <li><a href="contact.html" class="hover:underline">Sewa Harian (Bawa Pulang)</a></li>
+                        <li><a href="contact.html" class="hover:underline">Paket Begadang</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-2 text-sm font-medium opacity-90">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-whatsapp-logo"></i> 0812-3456-7890</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-instagram-logo"></i> @psmamanunu</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-map-pin"></i> Jl. Gamer Sejati No. 1</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold">
+                <p>&copy; 2024 PS Mama Nunu. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:underline">Kebijakan Privasi</a>
+                    <a href="#" class="hover:underline">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
